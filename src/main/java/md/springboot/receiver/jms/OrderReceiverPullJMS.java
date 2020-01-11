@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class OrderReceiverJMS implements OrderReceiver {
+public class OrderReceiverPullJMS implements OrderReceiver {
 
     private final JmsTemplate jmsTemplate;
 
