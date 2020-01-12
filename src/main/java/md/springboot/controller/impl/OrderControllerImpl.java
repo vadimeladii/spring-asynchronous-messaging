@@ -1,6 +1,5 @@
 package md.springboot.controller.impl;
 
-import lombok.RequiredArgsConstructor;
 import md.springboot.controller.OrderController;
 import md.springboot.dto.Order;
 import md.springboot.receiver.OrderReceiver;
@@ -12,14 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
 public class OrderControllerImpl implements OrderController {
 
     @Autowired
-    @Qualifier("orderReceiverPullJMS")
+    @Qualifier("orderReceiverPullAMQP")
     private OrderReceiver receiver;
 
-    private final OrderSender sender;
+    @Autowired
+    @Qualifier("orderSenderAMQP")
+    private OrderSender sender;
 
     @Override
     public Order receive() {
