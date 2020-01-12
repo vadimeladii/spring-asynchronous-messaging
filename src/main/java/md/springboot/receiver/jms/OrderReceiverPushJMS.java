@@ -24,7 +24,7 @@ public class OrderReceiverPushJMS implements OrderReceiver {
         return orders;
     }
 
-    @JmsListener(destination = "springboot2.order.queue")
+//    @JmsListener(destination = "springboot2.order.queue")
     private void listen(Order order) {
         orders.add(order);
     }

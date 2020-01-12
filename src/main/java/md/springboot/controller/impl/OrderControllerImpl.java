@@ -16,7 +16,7 @@ import java.util.List;
 public class OrderControllerImpl implements OrderController {
 
     @Autowired
-    @Qualifier("orderReceiverPushJMS")
+    @Qualifier("orderReceiverPullJMS")
     private OrderReceiver receiver;
 
     private final OrderSender sender;
